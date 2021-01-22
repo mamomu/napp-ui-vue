@@ -11,6 +11,7 @@
 <script>
 // more icons in https://materialdesignicons.com/
 export default {
+  name: "Icon",
   props: {
     name: String,
     className: String,
