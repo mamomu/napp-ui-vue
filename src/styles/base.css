@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  /* colors */
+  --clr-primary: #444;
+  --clr-primary-alternative: #ef7a3e;
+  --clr-primary-light: #666;
+  --clr-primary-dark: #dedede;
+  --clr-background: #fff;
+  --clr-background-opacity: rgba(255, 255, 255, 0.95);
+  --clr-scrollbar-background: rgba(0, 0, 0, 0.15);
+  --clr-text: #000;
+  --clr-text-secondary: #aaa;
+  --clr-text-light: #fff;
+  --clr-stroke: #ccc;
+  --clr-error: #d16969;
+  --clr-notification: #d16969;
+  --clr-stars: #f3b617;
+  --clr-warning: #fbe6ae;
+  --clr-warning-text: rgba(0,0,0,.5);
+  --clr-alert: #f3b617;
+  --clr-pending: #22a4ed;
+  --clr-ok: #6db36a;
+
+  --clr-loader-background: #bbb;
+  --clr-loader-border: #444;
+
+  --clr-alert-ok: #4db069;
+  --clr-alert-warning: #d96161;
+  --clr-alert-warn: #f3b617;
+
+  --clr-status-online: #22a4ed;
+  --clr-status-offline: #aaa;
+  --clr-status-processing: #22a4ed;
+  --clr-status-done: #4db069;
+  --clr-status-error: #d96161;
+  /* dimensions */
+  --dim-nav-height: 4.5rem;
+  --dim-footer-height: 4rem;
+  --dim-border-radius: 0.3rem;
+  --dim-border-width: 0.06rem;
+  font-size: 16px;
+  color: var(--clr-text) !important;
+}
+
+html[theme="dark"] {
+  --clr-primary-dark: #111;
+  --clr-background: #222;
+  --clr-background-opacity: rgba(20, 20, 20, 0.95);
+  --clr-loader-background: #000;
+  --clr-scrollbar-background: rgba(255, 255, 255, 0.05);
+  --clr-text: #fff;
+  --clr-text-secondary: rgb(197, 197, 197);
+  --clr-text-light: #fff;
+  --clr-stroke: #777;
+  --clr-error: #e86666;
+  --clr-notification: #e86666;
+  --clr-warning: #886402;
+  --clr-warning-text: rgba(255,255,255,.6);
+  --clr-ok: #6db36a;
+
+  --clr-loader-background: #444;
+  --clr-loader-border: #bbb;
+}
+
+body {
+  background-color: var(--clr-background);
+  transition: background-color 0.2s ease;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea {
+  color: var(--clr-text);
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+input::placeholder {
+  color: var(--clr-text-secondary);
+}
+
+.tooltip, .popover {
+  z-index: 100000!important;
+}

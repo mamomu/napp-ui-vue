@@ -1,0 +1,137 @@
+/* alert */
+.alerts {
+  position: absolute;
+  z-index: 100000;
+  padding: 1rem;
+  right: 0;
+  top: var(--dim-nav-height);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: calc(100vh - var(--dim-nav-height));
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.alerts > div {
+  background-color: var(--clr-background);
+  color: var(--clr-text-light);
+  padding: 1rem;
+  width: 20rem;
+  border-radius: var(--dim-border-radius);
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: opacity .3s ease;
+
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+  animation: alert-enter .6s ease-out;
+}
+
+@keyframes alert-enter {
+  0% {
+    transform: translateX(200%);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.alerts > div:hover{
+  opacity: .9;
+}
+
+.alerts > div:hover > .close-icon,
+.alerts > div:focus-within > .close-icon{
+  opacity: 1;
+}
+
+.alerts > div:hover > .close-icon i {
+  transition: transform .2s;
+  transform-origin: 100% 0;
+}
+
+.alerts > div:hover > .close-icon i,
+.alerts > div:focus-within > .close-icon i{
+  transform: scale(1.5);
+}
+
+.alerts > div > i {
+  margin-right: .875rem;
+}
+
+.alerts > div > .close-icon{
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  margin: 0;
+  font-size: .875rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: 0;
+  transition: .2s ease;
+  transition-property: font-size opacity; 
+  background: none;
+  border: none;
+}
+
+.alerts > div > .close-icon:focus {
+  outline: 0;
+}
+
+.alerts p {
+  margin: 0;
+  text-align: left;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.alerts .alert-title{
+  font-weight: bold;
+}
+
+.alerts .alert-message{
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.alerts .alert-type-success {
+  background-color: var(--clr-alert-ok);
+}
+
+.alerts .alert-type-error {
+  background-color: var(--clr-alert-warning);
+}
+
+.alerts .alert-type-warn {
+  background-color: var(--clr-alert-warn);
+}
+
+.alerts .alert-out {
+  transform: scale(.3, .1);
+  opacity: 0;
+  pointer-events: none;
+  animation: alert-exit .4s ease-in-out;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+@keyframes alert-exit {
+  from {
+    transform: scale(1, 1);
+    pointer-events: none;
+    opacity: 1;
+    max-height: 6.25rem;
+    padding: 1rem;
+    margin-bottom: .5rem;
+  }
+}

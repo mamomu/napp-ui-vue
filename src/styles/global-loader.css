@@ -1,0 +1,43 @@
+.global-loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  background-color: var(--clr-background-opacity);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container > .loader {
+  --size: 5rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: solid 0.4rem var(--clr-loader-background);
+  border-top-color: var(--clr-loader-border);
+  margin-bottom: 1rem;
+
+  animation: loader-spin infinite ease-in-out 0.8s;
+}
+
+.loader-container > span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--clr-primary);
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

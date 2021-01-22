@@ -1,16 +1,25 @@
 {
   "name": "napp-ui-vue",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+     "build": "vue-cli-service build --target lib --name napp-ui-vue src/main.js",
+    "lint": "vue-cli-service lint",
+     "prepublishOnly": "$npm_execpath build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mamomu/napp-ui-vue.git"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -40,3 +49,4 @@
     "not dead"
   ]
 }
+ 

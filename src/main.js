@@ -1,4 +1,19 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import * as components from './components'
+import "./styles/main.css";
 
-createApp(App).mount('#app')
+const NappUI = {
+  install(Vue = {}) {
+    // components
+    for (const componentName in components) {
+      const component = components[componentName]
+
+      Vue.component(component.name, component)
+    }
+  }
+}
+
+export default NappUI
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(NappUI)
+}
