@@ -1,6 +1,6 @@
 {
   "name": "napp-ui-vue",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint",
      "prepublishOnly": "$npm_execpath build"
   },
+  "main": "dist/napp-ui-vue.umd.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mamomu/napp-ui-vue.git"
